@@ -1,0 +1,1 @@
+# Eskulai Shared Types
