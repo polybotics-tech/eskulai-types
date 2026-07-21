@@ -13,7 +13,6 @@ export type UserType = {
 };
 
 export type UserDetailsType = {
-  id: string;
   userId: UserType["id"];
 
   dob: Date | string;
@@ -23,8 +22,10 @@ export type UserDetailsType = {
   role: "student" | "nurse" | "doctor";
 };
 
-export type UserWithPassword = UserType & {
+export type UserWithPasswordType = UserType & {
   passwordHash: string;
 };
 
-export type UserWithDetails = UserType & UserDetailsType;
+export type UserWithDetailsType = UserType & {
+  details: UserDetailsType | null;
+};
