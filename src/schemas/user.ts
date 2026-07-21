@@ -5,11 +5,17 @@ import {
   passwordSchema,
 } from "@/schemas/global.js";
 
-export const userUpdateSchema = Joi.object({
+import {
+  UserUpdatePasswordRequestType,
+  UserUpdateDetailsRequestType,
+  UserUpdateRequestType,
+} from "@/api/requests/user.js";
+
+export const userUpdateSchema = Joi.object<UserUpdateRequestType>({
   fullname: fullnameSchema,
 });
 
-export const userUpdateDetailSchema = Joi.object({
+export const userUpdateDetailSchema = Joi.object<UserUpdateDetailsRequestType>({
   dob: Joi.date().less("now").optional().messages({
     "date.empty": "Please provide a date",
     "date.base": "Please provide a date",
@@ -33,11 +39,12 @@ export const userUpdateDetailSchema = Joi.object({
   }),
 });
 
-export const userNewPasswordSchema = Joi.object({
-  oldPassword: Joi.string().required().messages({
-    "any.required": "Please provide a password",
-    "string.empty": "Please provide a password",
-  }),
-  password: passwordSchema,
-  confirmPassword: confirmPasswordSchema,
-});
+export const userUpdatePasswordSchema =
+  Joi.object<UserUpdatePasswordRequestType>({
+    oldPassword: Joi.string().required().messages({
+      "any.required": "Please provide a password",
+      "string.empty": "Please provide a password",
+    }),
+    password: passwordSchema,
+    confirmPassword: confirmPasswordSchema,
+  });

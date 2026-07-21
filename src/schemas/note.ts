@@ -1,6 +1,8 @@
 import Joi from "joi";
 
-export const noteSchema = Joi.object({
+import { NoteRequestType } from "@/api/requests/note.js";
+
+export const noteSchema = Joi.object<NoteRequestType>({
   title: Joi.string().required().trim().min(2).max(50).messages({
     "string.required": "Please provide a title",
     "string.empty": "Please provide a title",

@@ -6,13 +6,22 @@ import {
   passwordSchema,
 } from "@/schemas/global.js";
 
-export const authRegisterSchema = Joi.object({
+import {
+  AuthCheckEmailRequestType,
+  AuthLoginRequestType,
+  AuthNewPasswordRequestType,
+  AuthRegisterRequestType,
+  AuthSendOtpRequestType,
+  AuthVerifyOtpRequestType,
+} from "@/api/requests/auth.js";
+
+export const authRegisterSchema = Joi.object<AuthRegisterRequestType>({
   email: emailSchema,
   password: passwordSchema,
   confirmPassword: confirmPasswordSchema,
 });
 
-export const authLoginSchema = Joi.object({
+export const authLoginSchema = Joi.object<AuthLoginRequestType>({
   email: emailSchema,
   password: Joi.string().required().messages({
     "any.required": "Please provide a password",
@@ -20,11 +29,11 @@ export const authLoginSchema = Joi.object({
   }),
 });
 
-export const authCheckEmailSchema = Joi.object({
+export const authCheckEmailSchema = Joi.object<AuthCheckEmailRequestType>({
   email: emailSchema,
 });
 
-export const authSendOtpSchema = Joi.object({
+export const authSendOtpSchema = Joi.object<AuthSendOtpRequestType>({
   userId: Joi.string().required().messages({
     "any.required": "Please provide a user ID",
     "string.empty": "Please provide a user ID",
@@ -32,7 +41,7 @@ export const authSendOtpSchema = Joi.object({
   purpose: otpVerificationPurposeSchema,
 });
 
-export const authVerifyOtpSchema = Joi.object({
+export const authVerifyOtpSchema = Joi.object<AuthVerifyOtpRequestType>({
   otp: Joi.string().required().messages({
     "any.required": "Please provide an OTP",
     "string.empty": "Please provide an OTP",
@@ -40,7 +49,7 @@ export const authVerifyOtpSchema = Joi.object({
   purpose: otpVerificationPurposeSchema,
 });
 
-export const authNewPasswordSchema = Joi.object({
+export const authNewPasswordSchema = Joi.object<AuthNewPasswordRequestType>({
   password: passwordSchema,
   confirmPassword: confirmPasswordSchema,
 });
