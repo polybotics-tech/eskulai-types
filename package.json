@@ -1,6 +1,6 @@
 {
   "name": "eskulai-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A single source of truth for all types and validation schema used by the eskulai ecosystem",
   "author": "Polybotics Tech Hub",
   "license": "MIT",
