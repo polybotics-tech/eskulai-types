@@ -2,7 +2,7 @@ export type NoteType = {
   id: string;
   userId: string;
 
-  creaatedAt: Date | string;
+  createdAt: Date | string;
   updatedAt: Date | string;
 
   title: string;
