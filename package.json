@@ -1,6 +1,6 @@
 {
   "name": "eskulai-types",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "A single source of truth for all types and validation schema used by the eskulai ecosystem",
   "author": "Polybotics Tech Hub",
   "license": "MIT",
@@ -30,7 +30,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && tsc-alias",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "postversion": "git push origin --follow-tags && npm publish"
   },
   "dependencies": {
     "joi": "^18.2.3"
