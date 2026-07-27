@@ -31,7 +31,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && tsc-alias",
     "prepare": "npm run build",
-    "postversion": "git push origin --follow-tags && npm publish"
+    "postversion": "git push origin --follow-tags"
   },
   "dependencies": {
     "joi": "^18.2.3",

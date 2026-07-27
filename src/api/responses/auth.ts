@@ -24,6 +24,7 @@ export type AuthFetchUserResponseDataType = {
 
 export type AuthCheckEmailResponseDataType = {
   emailExists: boolean;
+  user: UserType;
 };
 
 export type AuthSendOtpResponseType = {
