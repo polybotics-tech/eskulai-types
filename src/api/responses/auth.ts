@@ -9,6 +9,7 @@ export type AuthRegisterResponseDataType = {
 
 export type AuthLoginResponseDataType = {
   user: UserType;
+  isNewDevice: boolean;
   accessToken: string | null;
   refreshToken: string | null;
 };
