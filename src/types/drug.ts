@@ -12,10 +12,12 @@ export type DrugSearchSuggestionType = {
   subtitle: string;
 
   tags: string[]; //--(for type=drug -> will be list of drug classification/actions/usage, for type=brand -> will be list of popular drug names from the brand, for type=constituent -> will be list of common drugs it can be found in)
+
+  matchType: "starts_with" | "contains" | "synonym" | "phonetic";
 };
 
-export type DrugSearchResultIsDrug = {
-  type: "drug";
+export type DrugSearchResultIsDrugType = {
+  type: DrugSuggestionTypeEnum.Drug;
 
   name: string;
   genericName?: string;
@@ -54,8 +56,8 @@ export type DrugSearchResultIsDrug = {
   references: DefaultContentListType;
 };
 
-type DrugSearchResultIsBrand = {
-  type: "brand";
+export type DrugSearchResultIsBrandType = {
+  type: DrugSuggestionTypeEnum.Brand;
 
   name: string;
 
@@ -78,8 +80,8 @@ type DrugSearchResultIsBrand = {
   references: DefaultContentListType;
 };
 
-type DrugSearchResultIsConstituent = {
-  type: "constituent";
+export type DrugSearchResultIsConstituentType = {
+  type: DrugSuggestionTypeEnum.Constituent;
 
   name: string;
 
@@ -103,6 +105,6 @@ type DrugSearchResultIsConstituent = {
 };
 
 export type DrugSearchResultType =
-  | DrugSearchResultIsDrug
-  | DrugSearchResultIsBrand
-  | DrugSearchResultIsConstituent;
+  | DrugSearchResultIsDrugType
+  | DrugSearchResultIsBrandType
+  | DrugSearchResultIsConstituentType;
