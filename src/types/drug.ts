@@ -13,7 +13,7 @@ export type DrugSearchSuggestionType = {
 
   tags: string[]; //--(for type=drug -> will be list of drug classification/actions/usage, for type=brand -> will be list of popular drug names from the brand, for type=constituent -> will be list of common drugs it can be found in)
 
-  matchType: "starts_with" | "contains" | "synonym" | "phonetic";
+  matchType?: "starts_with" | "contains" | "synonym" | "phonetic";
 };
 
 export type DrugSearchResultIsDrugType = {
