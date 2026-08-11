@@ -86,7 +86,7 @@ export type DrugSearchResultIsConstituentType = {
   name: string;
 
   chemicalClass?: string;
-  molecularFormula?: string;
+  molecularFormula?: DefaultContentListType;
   mechanismOfAction: DefaultContentListType;
 
   pharmacokinetics: DefaultContentListType;
