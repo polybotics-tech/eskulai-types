@@ -71,7 +71,7 @@ export type SeperatorContentType = {
   isVisible?: boolean;
 };
 
-type NotationContentType = {
+export type NotationContentType = {
   type: "notation";
   notation: "latex" | "unicode";
   expression: string;
