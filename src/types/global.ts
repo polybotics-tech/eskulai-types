@@ -71,11 +71,19 @@ export type SeperatorContentType = {
   isVisible?: boolean;
 };
 
+type NotationContentType = {
+  type: "notation";
+  notation: "latex" | "unicode";
+  expression: string;
+  inline?: boolean;
+};
+
 export type DefaultContentListType = (
   | TextContentType
   | ImageContentType
   | TableContentType
   | ListContentType
   | SeperatorContentType
+  | NotationContentType
 )[];
 //----------------------------------//
