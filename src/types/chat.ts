@@ -1,4 +1,4 @@
-import { DefaultContentListType } from "@/types/global.js";
+import { DefaultContentListType } from "@/types/content.js";
 
 export type AIChatType = {
   id: string;
