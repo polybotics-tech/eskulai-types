@@ -1,4 +1,4 @@
-import { DefaultContentListType } from "@/types/global.js";
+import { DefaultContentListType } from "@/types/content.js";
 import { ReactNode } from "react";
 
 export type PrepNoteCategoryType =

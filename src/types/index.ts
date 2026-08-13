@@ -3,6 +3,7 @@ export * from "@/types/article.js";
 export * from "@/types/auth.js";
 export * from "@/types/calculator.js";
 export * from "@/types/chat.js";
+export * from "@/types/content.js";
 export * from "@/types/drug.js";
 export * from "@/types/note.js";
 export * from "@/types/prepcase.js";
