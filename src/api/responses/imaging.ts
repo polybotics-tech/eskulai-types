@@ -1,9 +1,7 @@
 import { DefaultContentListType } from "@/types/content.js";
 import {
-  ImagingConfidenceLevel,
   ImagingDiagnosisStatusEnum,
   ImagingDifferentialDiagnosisType,
-  ImagingFindingSeverity,
   ImagingFindingType,
   ImagingImpressionType,
 } from "@/types/imaging.js";
@@ -16,7 +14,7 @@ export type MedicalImagingDiagnosisResponseDataType = {
   modality: string;
   region: string;
 
-  summary: string;
+  summary: DefaultContentListType;
 
   imageAssessment: {
     imageCount: number;
