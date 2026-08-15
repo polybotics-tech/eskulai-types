@@ -3,7 +3,6 @@ import {
   ImagingDiagnosisStatusEnum,
   ImagingDifferentialDiagnosisType,
   ImagingFindingType,
-  ImagingImpressionType,
 } from "@/types/imaging.js";
 
 export type MedicalImagingDiagnosisResponseDataType = {
@@ -25,8 +24,6 @@ export type MedicalImagingDiagnosisResponseDataType = {
   };
 
   findings: ImagingFindingType[];
-
-  impressions: ImagingImpressionType[];
 
   differentialDiagnoses: ImagingDifferentialDiagnosisType[];
 

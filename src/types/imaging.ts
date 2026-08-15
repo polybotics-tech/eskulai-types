@@ -31,14 +31,6 @@ export type ImagingFindingType = {
   abnormal: boolean;
 };
 
-export type ImagingImpressionType = {
-  diagnosis: string;
-
-  description: string;
-
-  confidence: ImagingConfidenceLevel;
-};
-
 export type ImagingDifferentialDiagnosisType = {
   diagnosis: string;
 
