@@ -4,6 +4,7 @@ export * from "@/types/auth.js";
 export * from "@/types/calculator.js";
 export * from "@/types/chat.js";
 export * from "@/types/content.js";
+export * from "@/types/diagnosis.js";
 export * from "@/types/drug.js";
 export * from "@/types/imaging.js";
 export * from "@/types/note.js";
