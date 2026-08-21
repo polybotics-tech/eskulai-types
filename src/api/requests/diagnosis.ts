@@ -10,8 +10,9 @@ export type PatientDiagnosisRequestDataType =
     }
   | {
       mode: "history";
-      answer: PatientHistoryAnswerType;
-      sessionId: string;
+      answer?: string;
+      skipped: boolean;
+      questionId: string;
     };
 
 export type PatientStartGuidedDiagnosisRequestDataType = {

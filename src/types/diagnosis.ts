@@ -62,8 +62,67 @@ export type PatientInvestigationType = {
 };
 
 //---
+export type PatientHistorySessionType = {
+  id: string;
+  userId: string;
+
+  status: "active" | "completed" | "abandoned";
+
+  presentingComplaint: string;
+
+  lastActivityAt: Date | string;
+
+  completedAt?: Date | string;
+  createdAt: Date | string;
+  updatedAt: Date | string;
+};
+
+export type PatientHistorySessionStateType = {
+  sessionId: string;
+
+  known: Record<string, string>;
+
+  unknown: string[];
+
+  skipped: string[];
+
+  relevantNegatives: string[];
+
+  unansweredImportantQuestions: string[];
+};
+
+export type PatientHistorySessionFactType = {
+  id: string;
+  sessionId: string;
+
+  category:
+    | "symptom"
+    | "sign"
+    | "medical_history"
+    | "medication"
+    | "allergy"
+    | "family_history"
+    | "social_history"
+    | "exposure"
+    | "risk_factor"
+    | "other";
+
+  fact: string;
+
+  value?: string;
+
+  polarity: "present" | "absent" | "unknown";
+
+  sourceQuestionId?: string;
+
+  confidence: "low" | "moderate" | "high";
+
+  createdAt: Date | string;
+};
+
 export type PatientHistoryQuestionType = {
   id: string;
+  sessionId: string;
 
   question: string;
   helpText?: string;
@@ -88,50 +147,19 @@ export type PatientHistoryQuestionType = {
 
   options?: string[];
 
-  answer?: string | number;
-
-  skipped: boolean;
-
-  answeredAt?: string;
-};
-
-export type PatientHistorySessionType = {
-  id: string;
-
-  status: "active" | "completed" | "abandoned";
-
-  presentingComplaint: string;
-
-  questions: PatientHistoryQuestionType[];
-
-  currentQuestionId?: string;
-
-  startedAt: string;
-  completedAt?: string;
-};
-
-export type PatientHistorySessionStateType = {
-  sessionId: string;
-
-  known: Record<string, string>;
-
-  unknown: string[];
-
-  skipped: string[];
-
-  relevantNegatives: string[];
-
-  unansweredImportantQuestions: string[];
+  status: "pending" | "answered" | "skipped";
 };
 
 export type PatientHistoryAnswerType = {
+  id: string;
+  sessionId: string;
   questionId: string;
 
   answer?: string;
 
   skipped: boolean;
 
-  answeredAt: string;
+  createdAt: Date | string;
 };
 
 export type PatientBioDataType = {
@@ -142,3 +170,5 @@ export type PatientBioDataType = {
   height: number;
   heightDimension: string;
 };
+
+export type PatientDiagnosiResult = {};
