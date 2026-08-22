@@ -47,6 +47,10 @@ export const startGuidedHistorySchema = Joi.object({
 });
 
 export const answerHistoryQuestionSchema = Joi.object({
+  questionId: Joi.string().required().messages({
+    "any.required": "Please provide a question ID",
+    "string.empty": "Please provide a question ID",
+  }),
   answer: Joi.string().allow("").max(2000).optional().messages({
     "string.max": "Answer cannot exceed 2000 characters",
   }),
