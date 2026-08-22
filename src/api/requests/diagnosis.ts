@@ -9,7 +9,7 @@ export type DifferentialDiagnosisRequestDataType = {
   summary: string;
 };
 
-export type AnwerHistoryQuestionRequestDataType = {
+export type AnswerHistoryQuestionRequestDataType = {
   answer?: string;
   skipped: boolean;
   questionId: string;
