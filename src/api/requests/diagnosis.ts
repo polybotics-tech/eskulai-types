@@ -1,21 +1,16 @@
-import {
-  PatientBioDataType,
-  PatientHistoryAnswerType,
-} from "@/types/diagnosis.js";
+import { PatientBioDataType } from "@/types/diagnosis.js";
 
-export type PatientDiagnosisRequestDataType =
-  | {
-      mode: "summary";
-      summary: string;
-    }
-  | {
-      mode: "history";
-      answer?: string;
-      skipped: boolean;
-      questionId: string;
-    };
-
-export type PatientStartGuidedDiagnosisRequestDataType = {
+export type StartGuidedDiagnosisRequestDataType = {
   complaint: string;
   biodata: PatientBioDataType;
+};
+
+export type DifferentialDiagnosisRequestDataType = {
+  summary: string;
+};
+
+export type AnwerHistoryQuestionRequestDataType = {
+  answer?: string;
+  skipped: boolean;
+  questionId: string;
 };

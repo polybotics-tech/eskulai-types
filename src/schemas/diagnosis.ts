@@ -18,19 +18,19 @@ export const patientBioDataSchema = Joi.object<PatientBioDataType>({
     "number.min": "Age cannot be negative",
     "number.max": "Age value is out of range",
   }),
-  weight: Joi.number().min(0).max(1000).required().messages({
+  weight: Joi.number().min(0).max(1000).messages({
     "any.required": "Please provide a weight",
     "number.base": "Weight must be a number",
   }),
-  weightDimension: Joi.string().valid("kg", "lb").required().messages({
+  weightDimension: Joi.string().valid("kg", "lb").messages({
     "any.required": "Please provide a weight unit",
     "any.only": "Unknown weight unit",
   }),
-  height: Joi.number().min(0).max(300).required().messages({
+  height: Joi.number().min(0).max(300).messages({
     "any.required": "Please provide a height",
     "number.base": "Height must be a number",
   }),
-  heightDimension: Joi.string().valid("cm", "in", "ft").required().messages({
+  heightDimension: Joi.string().valid("cm", "in", "ft").messages({
     "any.required": "Please provide a height unit",
     "any.only": "Unknown height unit",
   }),

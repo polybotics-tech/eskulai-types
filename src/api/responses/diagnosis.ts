@@ -1,38 +1,24 @@
-import { DefaultContentListType } from "@/types/content.js";
 import {
-  PatientDiagnosisAssessmentType,
-  PatientDiagnosisFindingType,
-  PatientDifferentialDiagnosisType,
-  PatientInvestigationType,
-  PatientRedFlagType,
+  PatientDiagnosisAnalysisType,
+  PatientHistoryAnswerType,
+  PatientHistoryQuestionType,
+  PatientHistorySessionFactType,
+  PatientHistorySessionType,
 } from "@/types/diagnosis.js";
 
-export type PatientDiagnosisResponseDataType = {
-  id: string;
+export type DiagnosisAnalysisResponseDataType = {
+  diagnosis: PatientDiagnosisAnalysisType;
+};
 
-  status: "completed" | "inconclusive" | "insufficient_information";
+export type DiagnosisHistoryQuestionResponseDataType = {
+  session: PatientHistorySessionType;
+  question?: PatientHistoryQuestionType;
+};
 
-  presentingComplaint: string;
-
-  clinicalSummary: DefaultContentListType;
-
-  keyFindings: PatientDiagnosisFindingType[];
-
-  differentialDiagnoses: PatientDifferentialDiagnosisType[];
-
-  mostLikelyDiagnosis?: PatientDiagnosisAssessmentType;
-
-  redFlags: PatientRedFlagType[];
-
-  recommendedNextSteps: DefaultContentListType;
-
-  suggestedInvestigations: PatientInvestigationType[];
-
-  clinicalConsiderations: DefaultContentListType;
-
-  limitations: DefaultContentListType;
-
-  references: DefaultContentListType;
-
-  disclaimer: string;
+export type DiagnosisHistorySessionResponseDataType = {
+  session: PatientHistorySessionType;
+  questions: PatientHistoryQuestionType[];
+  answers: PatientHistoryAnswerType[];
+  facts: PatientHistorySessionFactType[];
+  pendingQuestion: PatientHistoryQuestionType;
 };

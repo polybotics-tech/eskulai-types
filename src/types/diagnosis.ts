@@ -171,4 +171,32 @@ export type PatientBioDataType = {
   heightDimension: string;
 };
 
-export type PatientDiagnosiResult = {};
+export type PatientDiagnosisAnalysisType = {
+  id: string;
+
+  status: "completed" | "inconclusive" | "insufficient_information";
+
+  presentingComplaint: string;
+
+  clinicalSummary: DefaultContentListType;
+
+  keyFindings: PatientDiagnosisFindingType[];
+
+  differentialDiagnoses: PatientDifferentialDiagnosisType[];
+
+  mostLikelyDiagnosis?: PatientDiagnosisAssessmentType;
+
+  redFlags: PatientRedFlagType[];
+
+  recommendedNextSteps: DefaultContentListType;
+
+  suggestedInvestigations: PatientInvestigationType[];
+
+  clinicalConsiderations: DefaultContentListType;
+
+  limitations: DefaultContentListType;
+
+  references: DefaultContentListType;
+
+  disclaimer: string;
+};
