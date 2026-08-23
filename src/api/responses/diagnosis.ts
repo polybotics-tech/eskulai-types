@@ -22,3 +22,7 @@ export type DiagnosisHistorySessionResponseDataType = {
   facts: PatientHistorySessionFactType[];
   pendingQuestion: PatientHistoryQuestionType;
 };
+
+export type DiagnosisPendingHistorySessionResponseDataType = {
+  sessions: PatientHistorySessionType[];
+};
