@@ -171,10 +171,16 @@ export type PatientBioDataType = {
   heightDimension: string;
 };
 
+export enum PatientDiagnosisStatusEnum {
+  Completed = "completed",
+  Inconclusive = "inconclusive",
+  InsufficientQuality = "insufficient_quality",
+}
+
 export type PatientDiagnosisAnalysisType = {
   id: string;
 
-  status: "completed" | "inconclusive" | "insufficient_information";
+  status: PatientDiagnosisStatusEnum;
 
   presentingComplaint: string;
 
