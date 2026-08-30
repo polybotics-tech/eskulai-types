@@ -19,46 +19,12 @@ export type PatientDifferentialDiagnosisType = {
     | "possible"
     | "likely"
     | "very_likely";
-
-  confidence: "low" | "moderate" | "high";
-
-  supportingFindings: string[];
-
-  findingsAgainst: string[];
-
-  explanation: DefaultContentListType;
 };
 
 export type PatientDiagnosisAssessmentType = {
   diagnosis: string;
 
-  confidence: "low" | "moderate" | "high";
-
-  explanation: DefaultContentListType;
-
   supportingFindings: string[];
-
-  importantAlternatives: string[];
-};
-
-export type PatientRedFlagType = {
-  title: string;
-
-  description: string;
-
-  urgency: "routine" | "prompt" | "urgent" | "emergency";
-
-  action: string;
-};
-
-export type PatientInvestigationType = {
-  name: string;
-
-  reason: string;
-
-  priority: "routine" | "recommended" | "urgent";
-
-  expectedPurpose?: string;
 };
 
 //---
@@ -192,11 +158,7 @@ export type PatientDiagnosisAnalysisType = {
 
   mostLikelyDiagnosis?: PatientDiagnosisAssessmentType;
 
-  redFlags: PatientRedFlagType[];
-
   recommendedNextSteps: DefaultContentListType;
-
-  suggestedInvestigations: PatientInvestigationType[];
 
   clinicalConsiderations: DefaultContentListType;
 
