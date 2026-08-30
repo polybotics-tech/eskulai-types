@@ -3,6 +3,7 @@ import Joi from "joi";
 import {
   PatientBioDataType,
   PatientHistoryAnswerType,
+  PatientHistoryQuestionType,
 } from "@/types/diagnosis.js";
 
 //--- Joi schemas for the AI / diagnosis endpoints ---
@@ -44,6 +45,7 @@ export const startGuidedHistorySchema = Joi.object({
     "string.max": "Complaint cannot exceed 1000 characters",
   }),
   biodata: patientBioDataSchema.required(),
+  initialPrompt: Joi.optional(),
 });
 
 export const answerHistoryQuestionSchema = Joi.object({
