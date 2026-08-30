@@ -1,8 +1,12 @@
-import { PatientBioDataType } from "@/types/diagnosis.js";
+import {
+  PatientBioDataType,
+  PatientHistoryQuestionType,
+} from "@/types/diagnosis.js";
 
 export type StartGuidedDiagnosisRequestDataType = {
   complaint: string;
   biodata: PatientBioDataType;
+  initialPrompt?: PatientHistoryQuestionType;
 };
 
 export type DifferentialDiagnosisRequestDataType = {
