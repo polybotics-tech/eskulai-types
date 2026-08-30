@@ -140,7 +140,7 @@ export type PatientBioDataType = {
 export enum PatientDiagnosisStatusEnum {
   Completed = "completed",
   Inconclusive = "inconclusive",
-  InsufficientQuality = "insufficient_quality",
+  InsufficientInformation = "insufficient_information",
 }
 
 export type PatientDiagnosisAnalysisType = {
