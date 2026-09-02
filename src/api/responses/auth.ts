@@ -1,29 +1,29 @@
 import { OtpVerificationType } from "@/types/auth.js";
 import { UserType, UserWithDetailsType } from "@/types/user.js";
 
-export type AuthRegisterResponseDataType = {
+export type AuthRegisterResponseType = {
   user: UserType;
   accessToken: string | null;
   refreshToken: string | null;
 };
 
-export type AuthLoginResponseDataType = {
+export type AuthLoginResponseType = {
   user: UserType;
   isNewDevice: boolean;
   accessToken: string | null;
   refreshToken: string | null;
 };
 
-export type AuthRefreshTokenResponseDataType = {
+export type AuthRefreshTokenResponseType = {
   accessToken: string | null;
   refreshToken: string | null;
 };
 
-export type AuthFetchUserResponseDataType = {
+export type AuthFetchUserResponseType = {
   user: UserWithDetailsType;
 };
 
-export type AuthCheckEmailResponseDataType = {
+export type AuthCheckEmailResponseType = {
   emailExists: boolean;
   user: UserType;
 };
@@ -34,13 +34,13 @@ export type AuthSendOtpResponseType = {
   accessToken: string | null;
 };
 
-export type AuthVerifyOtpResponseDataType = {
+export type AuthVerifyOtpResponseType = {
   user: UserType;
   accessToken: string | null;
   refreshToken: string | null;
 };
 
-export type AuthNewPasswordResponseDataType = {
+export type AuthNewPasswordResponseType = {
   user: UserType;
   accessToken: string | null;
   refreshToken: string | null;

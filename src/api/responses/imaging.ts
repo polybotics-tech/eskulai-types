@@ -5,7 +5,7 @@ import {
   ImagingFindingType,
 } from "@/types/imaging.js";
 
-export type MedicalImagingDiagnosisResponseDataType = {
+export type MedicalImagingDiagnosisResponseType = {
   id: string;
 
   status: ImagingDiagnosisStatusEnum;

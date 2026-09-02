@@ -1,10 +1,10 @@
 import { UserType, UserWithDetailsType } from "@/types/user.js";
 
-export type UserUpdateResponseDataType = {
+export type UserUpdateResponseType = {
   user: UserType;
 };
 
-export type UserUpdatePasswordResponseDataType = {
+export type UserUpdatePasswordResponseType = {
   user: UserType;
   accessToken: string | null;
   refreshToken: string | null;

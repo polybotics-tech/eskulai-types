@@ -1,10 +1,10 @@
 import { DefaultContentListType } from "@/types/content.js";
 
-export type AIChatType = {
+export type AIChatMessageType = {
   id: string;
   userId?: string;
-  threadId?: string;
+  conversationId?: string;
   createdAt: string;
-  messages: DefaultContentListType;
-  sender: "eskulai" | "user";
+  content: DefaultContentListType;
+  role: "assistant" | "user";
 };

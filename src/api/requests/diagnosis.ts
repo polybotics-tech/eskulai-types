@@ -3,17 +3,17 @@ import {
   PatientHistoryQuestionType,
 } from "@/types/diagnosis.js";
 
-export type StartGuidedDiagnosisRequestDataType = {
+export type StartGuidedDiagnosisRequestType = {
   complaint: string;
   biodata: PatientBioDataType;
   initialPrompt?: PatientHistoryQuestionType;
 };
 
-export type DifferentialDiagnosisRequestDataType = {
+export type DifferentialDiagnosisRequestType = {
   summary: string;
 };
 
-export type AnswerHistoryQuestionRequestDataType = {
+export type AnswerHistoryQuestionRequestType = {
   answer?: string;
   skipped: boolean;
   questionId: string;

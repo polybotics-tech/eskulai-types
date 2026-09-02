@@ -1,15 +1,15 @@
 import { PaginationMetaType } from "@/types/global.js";
 import { NoteType } from "@/types/note.js";
 
-export type NoteResponseDataType = {
+export type NoteResponseType = {
   note: NoteType;
 };
 
-export type NotesByDateResponseDataType = {
+export type NotesByDateResponseType = {
   notes: NoteType[];
   meta: PaginationMetaType;
 };
 
-export type DatesWithNoteResponseDataType = {
+export type DatesWithNoteResponseType = {
   dates: (Date | string)[];
 };

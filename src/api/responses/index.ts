@@ -3,3 +3,4 @@ export * from "@/api/responses/diagnosis.js";
 export * from "@/api/responses/imaging.js";
 export * from "@/api/responses/user.js";
 export * from "@/api/responses/note.js";
+export * from "@/api/responses/chat.js";

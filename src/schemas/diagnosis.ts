@@ -3,10 +3,7 @@ import Joi from "joi";
 import {
   PatientBioDataType,
   PatientHistoryAnswerType,
-  PatientHistoryQuestionType,
 } from "@/types/diagnosis.js";
-
-//--- Joi schemas for the AI / diagnosis endpoints ---
 
 export const patientBioDataSchema = Joi.object<PatientBioDataType>({
   gender: Joi.string().valid("male", "female").required().messages({
@@ -70,5 +67,4 @@ export const differentialDiagnosisSchema = Joi.object({
   }),
 });
 
-// Re-export type alias used by api_server validator typing
 export type PatientHistoryAnswerSchemaType = PatientHistoryAnswerType;

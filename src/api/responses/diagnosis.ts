@@ -6,16 +6,16 @@ import {
   PatientHistorySessionType,
 } from "@/types/diagnosis.js";
 
-export type DiagnosisAnalysisResponseDataType = {
+export type DiagnosisAnalysisResponseType = {
   diagnosis: PatientDiagnosisAnalysisType;
 };
 
-export type DiagnosisHistoryQuestionResponseDataType = {
+export type DiagnosisHistoryQuestionResponseType = {
   session: PatientHistorySessionType;
   question?: PatientHistoryQuestionType;
 };
 
-export type DiagnosisHistorySessionResponseDataType = {
+export type DiagnosisHistorySessionResponseType = {
   session: PatientHistorySessionType;
   questions: PatientHistoryQuestionType[];
   answers: PatientHistoryAnswerType[];
@@ -23,6 +23,6 @@ export type DiagnosisHistorySessionResponseDataType = {
   pendingQuestion: PatientHistoryQuestionType;
 };
 
-export type DiagnosisPendingHistorySessionResponseDataType = {
+export type DiagnosisPendingHistorySessionResponseType = {
   sessions: PatientHistorySessionType[];
 };
