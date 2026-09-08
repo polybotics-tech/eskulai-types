@@ -1,21 +1,16 @@
-import { DefaultContentListType } from "@/types/content.js";
+import { AIChatConversationType, AIChatMessageType } from "@/types/chat.js";
+import { PaginationMetaType } from "@/types/global.js";
 
 export type AIChatMessageResponseType = {
-  id: string;
-  conversationId: string;
-  role: "user" | "assistant";
-  content: DefaultContentListType;
-  createdAt: string;
+  message: AIChatMessageType;
 };
 
 export type AIChatConversationsResponseType = {
-  id: string;
-  userId: string;
-  createdAt: string;
-  updatedAt: string;
-  lastMessage?: string;
+  conversations: AIChatConversationType[];
+  meta: PaginationMetaType;
 };
 
 export type AIChatHistoryResponseType = {
-  messages: AIChatMessageResponseType[];
+  messages: AIChatMessageType[];
+  meta: PaginationMetaType;
 };

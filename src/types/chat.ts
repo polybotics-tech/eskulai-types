@@ -8,3 +8,12 @@ export type AIChatMessageType = {
   content: DefaultContentListType;
   role: "assistant" | "user";
 };
+
+export type AIChatConversationType = {
+  id: string;
+  userId: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  lastMessage?: string;
+};
