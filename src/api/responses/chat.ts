@@ -3,6 +3,8 @@ import { PaginationMetaType } from "@/types/global.js";
 
 export type AIChatMessageResponseType = {
   message: AIChatMessageType;
+  conversation: AIChatConversationType;
+  isNew: boolean;
 };
 
 export type AIChatConversationsResponseType = {
