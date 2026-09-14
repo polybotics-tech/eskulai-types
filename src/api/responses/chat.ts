@@ -2,7 +2,8 @@ import { AIChatConversationType, AIChatMessageType } from "@/types/chat.js";
 import { PaginationMetaType } from "@/types/global.js";
 
 export type AIChatMessageResponseType = {
-  message: AIChatMessageType;
+  userMessage: AIChatMessageType;
+  assitantMessage: AIChatMessageType;
   conversation: AIChatConversationType;
   isNew: boolean;
 };
