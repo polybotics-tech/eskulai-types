@@ -3,6 +3,6 @@ export type SendAIChatMessageRequestType = {
   message: string;
 };
 
-export type DeleteAIChatConversationseRequestType = {
+export type DeleteAIChatConversationsRequestType = {
   conversationIds: string[];
 };
