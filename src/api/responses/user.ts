@@ -1,4 +1,9 @@
-import { UserType, UserWithDetailsType } from "@/types/user.js";
+import {
+  UserType,
+  UserWithDetailsAndPreferencesType,
+  UserWithDetailsType,
+  UserWithPreferencesType,
+} from "@/types/user.js";
 
 export type UserUpdateResponseType = {
   user: UserType;
@@ -14,7 +19,11 @@ export type UserUpdateDetailsResponseType = {
   user: UserWithDetailsType;
 };
 
+export type UserUpdatePreferencesResponseType = {
+  user: UserWithPreferencesType;
+};
+
 export type UserFetchUserResponseType = {
-  user: UserWithDetailsType;
+  user: UserWithDetailsAndPreferencesType;
   extra?: any;
 };

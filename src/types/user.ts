@@ -22,6 +22,14 @@ export type UserDetailsType = {
   role: "student" | "nurse" | "doctor";
 };
 
+export type UserPreferencesType = {
+  userId: UserType["id"];
+
+  interactionStyle: "summarized" | "detailed";
+  medicalTerminology: "basic" | "standard" | "clinical";
+  responseTonicity: "simple" | "professional" | "technical";
+};
+
 export type UserWithPasswordType = UserType & {
   passwordHash: string;
 };
@@ -29,3 +37,10 @@ export type UserWithPasswordType = UserType & {
 export type UserWithDetailsType = UserType & {
   details: UserDetailsType | null;
 };
+
+export type UserWithPreferencesType = UserType & {
+  preferences: UserPreferencesType | null;
+};
+
+export type UserWithDetailsAndPreferencesType = UserWithDetailsType &
+  UserWithPreferencesType;

@@ -9,6 +9,7 @@ import {
   UserUpdatePasswordRequestType,
   UserUpdateDetailsRequestType,
   UserUpdateRequestType,
+  UserUpdatePreferencesRequestType,
 } from "@/api/requests/user.js";
 
 export const userUpdateSchema = Joi.object<UserUpdateRequestType>({
@@ -38,6 +39,34 @@ export const userUpdateDetailSchema = Joi.object<UserUpdateDetailsRequestType>({
     "string.min": "Please provide a country",
   }),
 });
+
+export const userUpdatePreferenceSchema =
+  Joi.object<UserUpdatePreferencesRequestType>({
+    interactionStyle: Joi.string()
+      .lowercase()
+      .valid("summarized", "detailed")
+      .optional()
+      .messages({
+        "string.empty": "Please provide an interaction style type",
+        "any.only": "Unknown interaction style type provided",
+      }),
+    medicalTerminology: Joi.string()
+      .lowercase()
+      .valid("basic", "standard", "clinical")
+      .optional()
+      .messages({
+        "string.empty": "Please provide a medical terminology type",
+        "any.only": "Unknown medical terminology type provided",
+      }),
+    responseTonicity: Joi.string()
+      .lowercase()
+      .valid("simple", "professional", "technical")
+      .optional()
+      .messages({
+        "string.empty": "Please provide a response tonicity type",
+        "any.only": "Unknown response tonicity type provided",
+      }),
+  });
 
 export const userUpdatePasswordSchema =
   Joi.object<UserUpdatePasswordRequestType>({
