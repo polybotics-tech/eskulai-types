@@ -1,5 +1,10 @@
 import { OtpVerificationType } from "@/types/auth.js";
-import { UserType, UserWithDetailsType } from "@/types/user.js";
+import {
+  UserType,
+  UserWithDetailsAndPreferencesType,
+  UserWithDetailsType,
+  UserWithPreferencesType,
+} from "@/types/user.js";
 
 export type AuthRegisterResponseType = {
   user: UserType;
@@ -20,7 +25,11 @@ export type AuthRefreshTokenResponseType = {
 };
 
 export type AuthFetchUserResponseType = {
-  user: UserWithDetailsType;
+  user:
+    | UserType
+    | UserWithDetailsType
+    | UserWithPreferencesType
+    | UserWithDetailsAndPreferencesType;
 };
 
 export type AuthCheckEmailResponseType = {
