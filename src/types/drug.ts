@@ -1,25 +1,12 @@
 import { DefaultContentListType } from "@/types/content.js";
 
-export enum DrugSuggestionTypeEnum {
+export enum DrugSearchTypeEnum {
   Drug = "drug",
   Brand = "brand",
   Constituent = "constituent",
 }
 
-export type DrugSearchSuggestionType = {
-  type: DrugSuggestionTypeEnum;
-  name: string;
-  subtitle: string;
-
-  tags: string[]; //--(for type=drug -> will be list of drug classification/actions/usage, for type=brand -> will be list of popular drug names from the brand, for type=constituent -> will be list of common drugs it can be found in)
-
-  matchType?: "starts_with" | "contains" | "synonym" | "phonetic";
-};
-
-export type DrugSearchResultIsDrugType = {
-  type: DrugSuggestionTypeEnum.Drug;
-
-  name: string;
+export type DrugInfoIsDrugType = {
   genericName?: string;
 
   pronunciation?: string;
@@ -51,16 +38,9 @@ export type DrugSearchResultIsDrugType = {
   storage: DefaultContentListType;
 
   patientCounselling: DefaultContentListType;
-
-  relatedSuggestions: DrugSearchSuggestionType[];
-  references: DefaultContentListType;
 };
 
-export type DrugSearchResultIsBrandType = {
-  type: DrugSuggestionTypeEnum.Brand;
-
-  name: string;
-
+export type DrugInfoIsBrandType = {
   manufacturer: string;
   country?: string;
 
@@ -75,16 +55,9 @@ export type DrugSearchResultIsBrandType = {
   warnings: DefaultContentListType;
 
   storage: DefaultContentListType;
-
-  relatedSuggestions: DrugSearchSuggestionType[];
-  references: DefaultContentListType;
 };
 
-export type DrugSearchResultIsConstituentType = {
-  type: DrugSuggestionTypeEnum.Constituent;
-
-  name: string;
-
+export type DrugInfoIsConstituentType = {
   chemicalClass?: string;
   molecularFormula?: DefaultContentListType;
   mechanismOfAction: DefaultContentListType;
@@ -99,12 +72,44 @@ export type DrugSearchResultIsConstituentType = {
   toxicity: DefaultContentListType;
 
   commonBrands: string[];
+};
 
-  relatedSuggestions: DrugSearchSuggestionType[];
+export type DrugType = {
+  id: string;
+
+  createdAt: Date | string;
+  updatedAt: Date | string;
+
+  type: DrugSearchTypeEnum;
+  name: string;
+  normalizedName: string;
+  subtitle: string;
+
+  tags: string[]; //--(for type=drug -> will be list of drug classification/actions/usage, for type=brand -> will be list of popular drug names from the brand, for type=constituent -> will be list of common drugs it can be found in)
+  keywords: string[];
+};
+
+export type DrugInfoType = {
+  id: string;
+  drugId: string;
+
+  createdAt: Date | string;
+  updatedAt: Date | string;
+
+  information:
+    | DrugInfoIsDrugType
+    | DrugInfoIsBrandType
+    | DrugInfoIsConstituentType;
+
   references: DefaultContentListType;
 };
 
-export type DrugSearchResultType =
-  | DrugSearchResultIsDrugType
-  | DrugSearchResultIsBrandType
-  | DrugSearchResultIsConstituentType;
+export type DrugSearchHistoryType = {
+  id: string;
+  userId: string;
+
+  createdAt: Date | string;
+  updatedAt: Date | string;
+
+  list: string[];
+};
