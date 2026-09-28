@@ -3,6 +3,7 @@ import { PaginationMetaType } from "@/types/global.js";
 
 export type DrugInfoResponseType = {
   drugInfo: DrugInfoType;
+  searchHistory: DrugSearchHistoryType;
 };
 
 export type DrugSearchResponseType = {
