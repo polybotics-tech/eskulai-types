@@ -12,5 +12,9 @@ export type DrugSearchResponseType = {
 };
 
 export type DrugSearchHistoryResponseType = {
-  history: DrugSearchHistoryType;
+  history: string[];
+};
+
+export type DrugSuggestionsResponseType = {
+  suggestions: string[];
 };
