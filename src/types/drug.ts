@@ -113,3 +113,5 @@ export type DrugSearchHistoryType = {
 
   list: string[];
 };
+
+export type DrugSuggestionType = string[];
