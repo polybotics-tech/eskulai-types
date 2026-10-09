@@ -16,11 +16,55 @@ export type PrepNoteCategoryType =
   | "physiology"
   | "references";
 
+export type PrepNoteSpecialtyType =
+  | "general_medicine"
+  | "general_surgery"
+  | "pediatrics"
+  | "obstetrics_gynecology"
+  | "emergency_medicine"
+  | "family_medicine"
+  | "internal_medicine"
+  | "geriatrics"
+  | "orthopedics"
+  | "neurosurgery"
+  | "cardiothoracic_surgery"
+  | "plastic_surgery"
+  | "urology"
+  | "ent"
+  | "ophthalmology"
+  | "cardiology"
+  | "pulmonology"
+  | "gastroenterology"
+  | "nephrology"
+  | "endocrinology"
+  | "rheumatology"
+  | "hematology"
+  | "oncology"
+  | "infectious_diseases"
+  | "dermatology"
+  | "neurology"
+  | "radiology"
+  | "pathology"
+  | "laboratory_medicine"
+  | "psychiatry"
+  | "clinical_psychology"
+  | "anesthesiology"
+  | "critical_care_medicine"
+  | "public_health"
+  | "community_medicine"
+  | "occupational_health"
+  | "medical_surgical_nursing"
+  | "pediatric_nursing"
+  | "mental_health_nursing"
+  | "critical_care_nursing"
+  | "maternal_child_health_nursing";
+
 export type PrepNoteCategoryIconType = Record<PrepNoteCategoryType, ReactNode>;
 
 export type PrepNoteType = {
   id: string;
   title: string;
+  specialty: PrepNoteSpecialtyType;
   category: PrepNoteCategoryType;
   contents: DefaultContentListType;
 };
