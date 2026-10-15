@@ -1,22 +1,7 @@
 import { DefaultContentListType } from "@/types/content.js";
 import { ReactNode } from "react";
 
-export type PrepNoteCategoryType =
-  | "tips"
-  | "drugs"
-  | "diagnosis"
-  | "management"
-  | "emergency"
-  | "investigations"
-  | "procedures"
-  | "guidelines"
-  | "pearls"
-  | "red_flags"
-  | "anatomy"
-  | "physiology"
-  | "references";
-
-export type PrepNoteSpecialtyType =
+export type MedicalSpecialtyType =
   | "general_medicine"
   | "general_surgery"
   | "pediatrics"
@@ -59,20 +44,42 @@ export type PrepNoteSpecialtyType =
   | "critical_care_nursing"
   | "maternal_child_health_nursing";
 
+export type PrepNoteCategoryType =
+  | "tips"
+  | "drugs"
+  | "diagnosis"
+  | "management"
+  | "emergency"
+  | "investigations"
+  | "procedures"
+  | "guidelines"
+  | "pearls"
+  | "red_flags"
+  | "anatomy"
+  | "physiology"
+  | "references";
+
 export type PrepNoteCategoryIconType = Record<PrepNoteCategoryType, ReactNode>;
 
 export type PrepNoteType = {
   id: string;
   title: string;
-  specialty: PrepNoteSpecialtyType;
+  specialty: MedicalSpecialtyType;
   category: PrepNoteCategoryType;
   contents: DefaultContentListType;
 };
 
 export type DiagnosticCaseDifficultyType = "easy" | "medium" | "hard";
+export type DiagnosticCaseSectionIdType =
+  | "demographics"
+  | "presenting_complaint"
+  | "history_of_presenting_illness"
+  | "past_medical_history"
+  | "physical_exam"
+  | "investigation_results";
 
 export type DiagnosticCaseSectionType = {
-  id: string;
+  id: DiagnosticCaseSectionIdType;
   title: string;
   contents: DefaultContentListType;
 };
@@ -87,7 +94,7 @@ export type DiagnosticCaseQuestionType = {
 export type DiagnosticCaseType = {
   id: string;
   title: string;
-  specialty: string;
+  specialty: MedicalSpecialtyType;
   difficulty: DiagnosticCaseDifficultyType;
 
   tags?: string[];
