@@ -91,6 +91,11 @@ export type DiagnosticCaseQuestionType = {
   isRequired?: boolean;
 };
 
+export type DiagnosticCaseAnswerType = {
+  questionId: string;
+  answer: string;
+};
+
 export type DiagnosticCaseType = {
   id: string;
   title: string;

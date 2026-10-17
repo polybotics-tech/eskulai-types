@@ -1,6 +1,7 @@
 import { PaginationMetaType } from "@/types/global.js";
 import {
   DiagnosticCaseDifficultyType,
+  DiagnosticCaseEvaluationType,
   DiagnosticCaseType,
   MedicalSpecialtyType,
   PrepNoteType,
@@ -16,4 +17,9 @@ export type DiagnosticCaseResponseType = {
   diagnosticCase: DiagnosticCaseType;
   specialty: MedicalSpecialtyType;
   difficulty: DiagnosticCaseDifficultyType;
+};
+
+export type DiagnosticCaseEvaluationResponseType = {
+  evaluation: DiagnosticCaseEvaluationType;
+  caseId: string;
 };
