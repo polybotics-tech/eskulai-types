@@ -109,6 +109,9 @@ export type DiagnosticCaseType = {
   questions: DiagnosticCaseQuestionType[];
 
   references?: string[];
+
+  intendedDiagnosis: string;
+  assessmentCriteria: string[];
 };
 
 export type DiagnosticCaseEvaluationType = {
