@@ -5,6 +5,7 @@ export type ArticleCategoryType = {
   createdAt: Date | string;
   updatedAt: Date | string;
   name: string;
+  normalizedName: string;
   numOfArticle?: number;
 };
 
