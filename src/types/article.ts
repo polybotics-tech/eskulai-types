@@ -1,9 +1,19 @@
 import { DefaultContentListType } from "@/types/content.js";
 
+export type ArticleCategoryType = {
+  id: string;
+  createdAt: Date | string;
+  updatedAt: Date | string;
+  name: string;
+  numOfArticle?: number;
+};
+
 export type ArticlePreviewType = {
   id: string;
-  createdAt: string;
-  category: string;
+  createdAt: Date | string;
+  updatedAt: Date | string;
+  categoryId: string;
+  category?: string;
   slug: string;
   title: string;
   intro: string;
@@ -12,10 +22,12 @@ export type ArticlePreviewType = {
 
 export type ArticleType = {
   id: string;
-  createdAt: string;
-  updatedAt: string;
-  author?: unknown;
-  category: string;
+  createdAt: Date | string;
+  updatedAt: Date | string;
+  authorId: string;
+  author?: string;
+  categoryId: string;
+  category?: string;
   keywords: string[];
   slug: string;
   title: string;

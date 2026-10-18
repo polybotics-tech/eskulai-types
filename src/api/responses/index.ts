@@ -1,4 +1,5 @@
 export * from "@/api/responses/auth.js";
+export * from "@/api/responses/article.js";
 export * from "@/api/responses/diagnosis.js";
 export * from "@/api/responses/drug.js";
 export * from "@/api/responses/imaging.js";
