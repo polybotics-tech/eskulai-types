@@ -7,3 +7,4 @@ export * from "@/api/responses/user.js";
 export * from "@/api/responses/note.js";
 export * from "@/api/responses/chat.js";
 export * from "@/api/responses/learn.js";
+export * from "@/api/responses/contact.js";

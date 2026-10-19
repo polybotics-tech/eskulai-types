@@ -10,3 +10,4 @@ export * from "@/types/imaging.js";
 export * from "@/types/note.js";
 export * from "@/types/learn.js";
 export * from "@/types/user.js";
+export * from "@/types/contact.js";

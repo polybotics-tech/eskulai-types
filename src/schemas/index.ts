@@ -5,3 +5,4 @@ export * from "@/schemas/note.js";
 export * from "@/schemas/user.js";
 export * from "@/schemas/chat.js";
 export * from "@/schemas/learn.js";
+export * from "@/schemas/contact.js";
