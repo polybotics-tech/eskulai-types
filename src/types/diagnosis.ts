@@ -181,6 +181,7 @@ export enum ImagingDiagnosisStatusEnum {
 export type ImagingModalityType =
   | "mri"
   | "ct"
+  | "xray"
   | "ultrasound"
   | "mammography"
   | "fluoroscopy"
@@ -301,8 +302,8 @@ export type ImagingDiagnosisAnalysisType = {
 
   status: ImagingDiagnosisStatusEnum;
 
-  modality: string;
-  region: string;
+  modality: ImagingModalityType;
+  region: BodyRegionType;
 
   summary: DefaultContentListType;
 
