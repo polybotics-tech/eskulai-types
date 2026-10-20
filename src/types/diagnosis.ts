@@ -168,3 +168,163 @@ export type PatientDiagnosisAnalysisType = {
 
   disclaimer: string;
 };
+
+//---------------------------------------------
+
+export enum ImagingDiagnosisStatusEnum {
+  Completed = "completed",
+  Inconclusive = "inconclusive",
+  InsufficientQuality = "insufficient_quality",
+  Unsupported = "unsupported",
+}
+
+export type ImagingModalityType =
+  | "mri"
+  | "ct"
+  | "ultrasound"
+  | "mammography"
+  | "fluoroscopy"
+  | "angiography"
+  | "echocardiogram"
+  | "hysterosalpingography"
+  | "pet"
+  | "dexa"
+  | "other";
+
+export type BodyRegionType =
+  | "head"
+  | "brain"
+  | "skull"
+  | "face"
+  | "jaw"
+  | "teeth"
+  | "sinuses"
+  | "eyes"
+  | "left_orbit"
+  | "right_orbit"
+  | "neck"
+  | "spine"
+  | "cervical_spine"
+  | "thoracic_spine"
+  | "lumbar_spine"
+  | "chest"
+  | "thorax"
+  | "lungs"
+  | "heart"
+  | "breast"
+  | "ribs"
+  | "abdomen"
+  | "liver"
+  | "gallbladder"
+  | "pancreas"
+  | "spleen"
+  | "stomach"
+  | "appendix"
+  | "kidneys"
+  | "left_kidney"
+  | "right_kidney"
+  | "bladder"
+  | "gastrointestinal_tract"
+  | "esophagus"
+  | "small_intestine"
+  | "large_intestine"
+  | "pelvis"
+  | "uterus"
+  | "ovaries"
+  | "prostate"
+  | "scrotum"
+  | "testes"
+  | "blood_vessels"
+  | "arteries"
+  | "coronary_arteries"
+  | "veins"
+  | "arms"
+  | "left_arm"
+  | "right_arm"
+  | "shoulders"
+  | "left_shoulder"
+  | "right_shoulder"
+  | "wrists"
+  | "left_wrist"
+  | "right_wrist"
+  | "legs"
+  | "left_leg"
+  | "right_leg"
+  | "knees"
+  | "left_knee"
+  | "right_knee"
+  | "bones"
+  | "joints"
+  | "cartilage"
+  | "ligaments"
+  | "tendons"
+  | "muscles"
+  | "soft_tissue"
+  | "other_region";
+
+export type ImagingFindingSeverity =
+  | "normal"
+  | "mild"
+  | "moderate"
+  | "severe"
+  | "critical";
+
+export type ImagingConfidenceLevel =
+  | "very_low"
+  | "low"
+  | "moderate"
+  | "high"
+  | "very_high";
+
+export type ImagingFindingType = {
+  title: string;
+
+  description: string;
+
+  severity?: ImagingFindingSeverity;
+
+  confidence: ImagingConfidenceLevel;
+
+  abnormal: boolean;
+};
+
+export type ImagingDifferentialDiagnosisType = {
+  diagnosis: string;
+
+  rationale: string;
+
+  confidence: ImagingConfidenceLevel;
+};
+
+export type ImagingDiagnosisAnalysisType = {
+  id: string;
+
+  status: ImagingDiagnosisStatusEnum;
+
+  modality: string;
+  region: string;
+
+  summary: DefaultContentListType;
+
+  imageAssessment: {
+    imageCount: number;
+
+    quality: "adequate" | "limited" | "poor";
+
+    limitations: string[];
+  };
+
+  findings: ImagingFindingType[];
+
+  differentialDiagnoses: ImagingDifferentialDiagnosisType[];
+
+  recommendations: DefaultContentListType;
+
+  clinicalCorrelation: DefaultContentListType;
+
+  limitations: DefaultContentListType;
+
+  references: DefaultContentListType;
+
+  disclaimer: string;
+};

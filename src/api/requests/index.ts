@@ -1,7 +1,6 @@
 export * from "@/api/requests/auth.js";
 export * from "@/api/requests/article.js";
 export * from "@/api/requests/diagnosis.js";
-export * from "@/api/requests/imaging.js";
 export * from "@/api/requests/user.js";
 export * from "@/api/requests/note.js";
 export * from "@/api/requests/chat.js";

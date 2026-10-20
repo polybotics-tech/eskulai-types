@@ -1,4 +1,5 @@
 import {
+  ImagingDiagnosisAnalysisType,
   PatientDiagnosisAnalysisType,
   PatientHistoryAnswerType,
   PatientHistoryQuestionType,
@@ -25,4 +26,8 @@ export type DiagnosisHistorySessionResponseType = {
 
 export type DiagnosisPendingHistorySessionResponseType = {
   sessions: PatientHistorySessionType[];
+};
+
+export type DiagnosisMedicalImagingResponseType = {
+  diagnosis: ImagingDiagnosisAnalysisType;
 };

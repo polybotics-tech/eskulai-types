@@ -68,3 +68,15 @@ export const differentialDiagnosisSchema = Joi.object({
 });
 
 export type PatientHistoryAnswerSchemaType = PatientHistoryAnswerType;
+
+export const medicalImagingSchema = Joi.object({
+  modality: Joi.string().trim().required().messages({
+    "any.required": "Please provide a modality",
+    "string.empty": "Please provide a modality",
+  }),
+  region: Joi.string().trim().required().messages({
+    "any.required": "Please provide a body region",
+    "string.empty": "Please provide a body region",
+  }),
+  moreInfo: Joi.string().optional(),
+});
