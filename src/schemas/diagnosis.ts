@@ -78,5 +78,5 @@ export const medicalImagingSchema = Joi.object({
     "any.required": "Please provide a body region",
     "string.empty": "Please provide a body region",
   }),
-  moreInfo: Joi.string().optional(),
+  moreInfo: Joi.optional(),
 });
