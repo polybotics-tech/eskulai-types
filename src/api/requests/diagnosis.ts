@@ -23,7 +23,11 @@ export type AnswerHistoryQuestionRequestType = {
 };
 
 export type MedicalImagingAnalysisRequestType = {
-  images: ImagePickerAsset[];
+  images: (ImagePickerAsset & {
+    id?: string;
+    isFromClipboard?: boolean;
+    data?: string;
+  })[];
 
   modality: ImagingModalityType;
 
