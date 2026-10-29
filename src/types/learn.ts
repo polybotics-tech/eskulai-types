@@ -1,48 +1,20 @@
+import {
+  MEDICAL_OPTIONS_BODY_REGIONS_CONST,
+  MEDICAL_OPTIONS_CASE_DIFFICULTIES_CONST,
+  MEDICAL_OPTIONS_MODALITIES_CONST,
+  MEDICAL_OPTIONS_SPECIALTIES_CONST,
+} from "@/constants/learn.js";
 import { DefaultContentListType } from "@/types/content.js";
 import { ReactNode } from "react";
 
 export type MedicalSpecialtyType =
-  | "general_medicine"
-  | "general_surgery"
-  | "pediatrics"
-  | "obstetrics_gynecology"
-  | "emergency_medicine"
-  | "family_medicine"
-  | "internal_medicine"
-  | "geriatrics"
-  | "orthopedics"
-  | "neurosurgery"
-  | "cardiothoracic_surgery"
-  | "plastic_surgery"
-  | "urology"
-  | "ent"
-  | "ophthalmology"
-  | "cardiology"
-  | "pulmonology"
-  | "gastroenterology"
-  | "nephrology"
-  | "endocrinology"
-  | "rheumatology"
-  | "hematology"
-  | "oncology"
-  | "infectious_diseases"
-  | "dermatology"
-  | "neurology"
-  | "radiology"
-  | "pathology"
-  | "laboratory_medicine"
-  | "psychiatry"
-  | "clinical_psychology"
-  | "anesthesiology"
-  | "critical_care_medicine"
-  | "public_health"
-  | "community_medicine"
-  | "occupational_health"
-  | "medical_surgical_nursing"
-  | "pediatric_nursing"
-  | "mental_health_nursing"
-  | "critical_care_nursing"
-  | "maternal_child_health_nursing";
+  (typeof MEDICAL_OPTIONS_SPECIALTIES_CONST)[number]["value"];
+export type MedicalImagingModalityType =
+  (typeof MEDICAL_OPTIONS_MODALITIES_CONST)[number]["value"];
+export type MedicalBodyRegionType =
+  (typeof MEDICAL_OPTIONS_BODY_REGIONS_CONST)[number]["value"];
+export type MedicalCaseDifficultyType =
+  (typeof MEDICAL_OPTIONS_CASE_DIFFICULTIES_CONST)[number]["value"];
 
 export type PrepNoteCategoryType =
   | "tips"
@@ -69,7 +41,6 @@ export type PrepNoteType = {
   contents: DefaultContentListType;
 };
 
-export type DiagnosticCaseDifficultyType = "easy" | "medium" | "hard";
 export type DiagnosticCaseSectionIdType =
   | "demographics"
   | "presenting_complaint"
@@ -100,7 +71,7 @@ export type DiagnosticCaseType = {
   id: string;
   title: string;
   specialty: MedicalSpecialtyType;
-  difficulty: DiagnosticCaseDifficultyType;
+  difficulty: MedicalCaseDifficultyType;
 
   tags?: string[];
   learningObjectives?: string[];

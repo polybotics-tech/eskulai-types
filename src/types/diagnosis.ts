@@ -1,4 +1,8 @@
 import { DefaultContentListType } from "@/types/content.js";
+import {
+  MedicalBodyRegionType,
+  MedicalImagingModalityType,
+} from "@/types/learn.js";
 
 export type PatientDiagnosisFindingType = {
   finding: string;
@@ -178,91 +182,6 @@ export enum ImagingDiagnosisStatusEnum {
   Unsupported = "unsupported",
 }
 
-export type ImagingModalityType =
-  | "mri"
-  | "ct"
-  | "xray"
-  | "ultrasound"
-  | "mammography"
-  | "fluoroscopy"
-  | "angiography"
-  | "echocardiogram"
-  | "hysterosalpingography"
-  | "pet"
-  | "dexa"
-  | "other";
-
-export type BodyRegionType =
-  | "head"
-  | "brain"
-  | "skull"
-  | "face"
-  | "jaw"
-  | "teeth"
-  | "sinuses"
-  | "eyes"
-  | "left_orbit"
-  | "right_orbit"
-  | "neck"
-  | "spine"
-  | "cervical_spine"
-  | "thoracic_spine"
-  | "lumbar_spine"
-  | "chest"
-  | "thorax"
-  | "lungs"
-  | "heart"
-  | "breast"
-  | "ribs"
-  | "abdomen"
-  | "liver"
-  | "gallbladder"
-  | "pancreas"
-  | "spleen"
-  | "stomach"
-  | "appendix"
-  | "kidneys"
-  | "left_kidney"
-  | "right_kidney"
-  | "bladder"
-  | "gastrointestinal_tract"
-  | "esophagus"
-  | "small_intestine"
-  | "large_intestine"
-  | "pelvis"
-  | "uterus"
-  | "ovaries"
-  | "prostate"
-  | "scrotum"
-  | "testes"
-  | "blood_vessels"
-  | "arteries"
-  | "coronary_arteries"
-  | "veins"
-  | "arms"
-  | "left_arm"
-  | "right_arm"
-  | "shoulders"
-  | "left_shoulder"
-  | "right_shoulder"
-  | "wrists"
-  | "left_wrist"
-  | "right_wrist"
-  | "legs"
-  | "left_leg"
-  | "right_leg"
-  | "knees"
-  | "left_knee"
-  | "right_knee"
-  | "bones"
-  | "joints"
-  | "cartilage"
-  | "ligaments"
-  | "tendons"
-  | "muscles"
-  | "soft_tissue"
-  | "other_region";
-
 export type ImagingFindingSeverity =
   | "normal"
   | "mild"
@@ -302,8 +221,8 @@ export type ImagingDiagnosisAnalysisType = {
 
   status: ImagingDiagnosisStatusEnum;
 
-  modality: ImagingModalityType;
-  region: BodyRegionType;
+  modality: MedicalImagingModalityType;
+  region: MedicalBodyRegionType;
 
   summary: DefaultContentListType;
 
