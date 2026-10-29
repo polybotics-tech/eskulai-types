@@ -1,8 +1,8 @@
 import { PaginationMetaType } from "@/types/global.js";
 import {
-  DiagnosticCaseDifficultyType,
   DiagnosticCaseEvaluationType,
   DiagnosticCaseType,
+  MedicalCaseDifficultyType,
   MedicalSpecialtyType,
   PrepNoteType,
 } from "@/types/learn.js";
@@ -16,7 +16,7 @@ export type PrepNotesResponseType = {
 export type DiagnosticCaseResponseType = {
   diagnosticCase: DiagnosticCaseType;
   specialty: MedicalSpecialtyType;
-  difficulty: DiagnosticCaseDifficultyType;
+  difficulty: MedicalCaseDifficultyType;
 };
 
 export type DiagnosticCaseEvaluationResponseType = {

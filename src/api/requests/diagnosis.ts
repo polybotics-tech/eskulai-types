@@ -1,9 +1,11 @@
 import {
-  BodyRegionType,
-  ImagingModalityType,
   PatientBioDataType,
   PatientHistoryQuestionType,
 } from "@/types/diagnosis.js";
+import {
+  MedicalBodyRegionType,
+  MedicalImagingModalityType,
+} from "@/types/learn.js";
 import { ImagePickerAsset } from "expo-image-picker";
 
 export type StartGuidedDiagnosisRequestType = {
@@ -29,9 +31,9 @@ export type MedicalImagingAnalysisRequestType = {
     data?: string;
   })[];
 
-  modality: ImagingModalityType;
+  modality: MedicalImagingModalityType;
 
-  region: BodyRegionType;
+  region: MedicalBodyRegionType;
 
   moreInfo?: string;
 };

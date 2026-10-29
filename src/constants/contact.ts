@@ -111,3 +111,5 @@ export const SUPPORT_TICKET_STATUS_CONST = [
   "resolved",
   "closed",
 ] as const;
+
+export const SUPPORT_TICKET_SENDER_ROLES_CONST = ["user", "support"] as const;
