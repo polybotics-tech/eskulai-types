@@ -31,6 +31,9 @@ export type UserType = {
 
   isEmailVerified: boolean;
   isDisabled: boolean;
+
+  appleId?: string;
+  lastSeen: Date | string;
 };
 
 export type UserDetailsType = {

@@ -54,3 +54,11 @@ export type AuthNewPasswordResponseType = {
   accessToken: string | null;
   refreshToken: string | null;
 };
+
+export type AuthSignInWithOAuthResponseType = {
+  user: UserType;
+  isNewDevice: boolean;
+  isNewRegistration: boolean;
+  accessToken: string | null;
+  refreshToken: string | null;
+};

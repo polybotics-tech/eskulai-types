@@ -12,6 +12,7 @@ import {
   AuthNewPasswordRequestType,
   AuthRegisterRequestType,
   AuthSendOtpRequestType,
+  AuthSignInWithGoogleRequestType,
   AuthVerifyOtpRequestType,
 } from "@/api/requests/auth.js";
 
@@ -53,3 +54,9 @@ export const authNewPasswordSchema = Joi.object<AuthNewPasswordRequestType>({
   password: passwordSchema,
   confirmPassword: confirmPasswordSchema,
 });
+
+export const authSignInWithGoogleSchema =
+  Joi.object<AuthSignInWithGoogleRequestType>({
+    email: emailSchema,
+    fullname: Joi.optional(),
+  });

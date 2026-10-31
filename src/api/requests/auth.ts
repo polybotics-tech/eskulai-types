@@ -29,3 +29,15 @@ export type AuthNewPasswordRequestType = {
   password: string;
   confirmPassword: string;
 };
+
+export type AuthSignInWithGoogleRequestType = {
+  email: string;
+  fullname: string;
+};
+
+export type AuthSignInWithAppleRequestType = {
+  identityToken: string | null;
+  userSub: string | null;
+  email: string | null;
+  fullname: string;
+};
