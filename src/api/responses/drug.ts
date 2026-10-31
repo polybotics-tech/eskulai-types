@@ -1,4 +1,9 @@
-import { DrugInfoType, DrugSearchHistoryType, DrugType } from "@/types/drug.js";
+import {
+  DrugImageAnalysisType,
+  DrugInfoType,
+  DrugSearchHistoryType,
+  DrugType,
+} from "@/types/drug.js";
 import { PaginationMetaType } from "@/types/global.js";
 
 export type DrugInfoResponseType = {
@@ -17,4 +22,8 @@ export type DrugSearchHistoryResponseType = {
 
 export type DrugSuggestionsResponseType = {
   suggestions: string[];
+};
+
+export type DrugImageResponseType = {
+  analysis: DrugImageAnalysisType;
 };
